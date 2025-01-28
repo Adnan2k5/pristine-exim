@@ -11,6 +11,7 @@ import guide from "../assets/guide.gif";
 import accounts from "../assets/accounts.gif";
 import { useForm } from "react-hook-form";
 import { Facebook, Instagram } from "@mui/icons-material";
+import scrap from "../assets/scrap.gif"
 
 export default function Home() {
   const { register, handleSubmit, reset } = useForm();
@@ -57,6 +58,12 @@ export default function Home() {
       description: "We provide accounting services.",
       img: accounts,
     },
+    {
+      title: "Scrap Related",
+      description: "We provide scrap related services.",
+      img: scrap
+
+    }
   ];
   const handleForm = async (data) => {
     const res = await fetch(
