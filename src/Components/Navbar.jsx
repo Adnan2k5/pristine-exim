@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-scroll'
 
 export const Navbar = () => {
   return (
@@ -8,15 +9,11 @@ export const Navbar = () => {
         Pristine Exim
       </a>
       <div className="hidden md:flex items-center gap-6">
-        <a href="/careers" className="hover:text-gray-300">
+        <a href="/" className="hover:text-gray-300">
           Home
         </a>
-        <a href="/login" className="hover:text-gray-300">
-          About
-        </a>
-        <button className="hover:text-gray-300">
-          Contact
-        </button>
+        <Link to="services" smooth={true} duration={1000} className="hover:text-gray-300">Services</Link>
+        <Link to="contact" smooth={true} duration={1000} className="hover:text-gray-300">Contact</Link>
       </div>
     </nav>
     </main>

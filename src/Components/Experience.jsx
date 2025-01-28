@@ -3,7 +3,7 @@ export const Experience = () => {
   return (
     <section className="bg-gray-900 backdrop-blur-sm z-50 text-white relative py-20">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12">
+          <div id='about' className="grid md:grid-cols-2 gap-12">
             <div className="space-y-8">
               <div className="flex gap-12">
                 <div>

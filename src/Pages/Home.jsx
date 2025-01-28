@@ -109,7 +109,7 @@ export default function Home() {
               Our Services
             </h1>
           </div>
-          <div className="services mt-10">
+          <div id="services" className="services mt-10">
             <div className="cards flex w-full flex-row flex-wrap gap-5 items-center justify-around">
               {services.map((service, index) => (
                 <div
@@ -133,7 +133,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <div className="section getin bg-black p-10 text-white">
+      <div id="contact" className="section getin bg-black p-10 text-white">
         <div className="title w-fit">
           <h1 className="text-3xl md:text-5xl text-center md:text-start font-bold tracking-wider">
             Get in Touch
