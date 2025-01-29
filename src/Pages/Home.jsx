@@ -1,19 +1,19 @@
 import { Experience } from "../Components/Experience";
-import { Layout } from "../Components/Layout";
-import imgoods from "../assets/import.png";
-import Fbank from "../assets/forex.png";
-import customs from "../assets/customs.png";
-import gst from "../assets/gst.png";
-import sourcing from "../assets/sourcing.png";
-import loan from "../assets/loan.png";
-import guide from "../assets/project.png";
-import accounts from "../assets/accounts.png";
+import imgoods from "../assets/import.gif";
+import Fbank from "../assets/forex.gif";
+import customs from "../assets/customs.gif";
+import gst from "../assets/gst.gif";
+import sourcing from "../assets/sourcing.gif";
+import loan from "../assets/loan.gif";
+import guide from "../assets/project.gif";
+import accounts from "../assets/account.gif";
 import { useForm } from "react-hook-form";
 import { Facebook, Instagram } from "@mui/icons-material";
-import scrap from "../assets/scrap.png";
+import scrap from "../assets/scrap.gif";
 import { AnimatedGradientText } from "../Components/AnimatedText";
 import { cn } from "../Lib/utils";
 import whatsapp from "../assets/whatsapp.png";
+import { Navbar } from "../Components/Navbar";
 
 export default function Home() {
   const { register, handleSubmit, reset } = useForm();
@@ -83,7 +83,8 @@ export default function Home() {
     }
   };
   return (
-    <Layout>
+    <div className="w-full h-full">
+      <Navbar/>
       <a
         href="https://wa.me/919999999999"
         className="fixed right-0 bottom-3 -mt-10 z-[110] w-16 h-16 cursor-pointer"
@@ -146,7 +147,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <div id="contact" className="section bg-black p-10 text-white">
+      <div id="contact" className="section bg-black relative p-10 text-white">
         <div className="title w-fit">
           <h1 className="text-3xl md:text-5xl text-center md:text-start font-bold tracking-wider">
             Get in Touch
@@ -225,6 +226,6 @@ export default function Home() {
           </footer>
         </div>
       </section>
-    </Layout>
+    </div>
   );
 }

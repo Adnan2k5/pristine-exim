@@ -20,11 +20,11 @@ const ParticlesComponent = (props) => {
 
   const options = useMemo(
     () => ({
-      background: {
-        color: {
-          value: "#fffff",
-        },
-      },
+    //   background: {
+    //     color: {
+    //       value: "#fffff",
+    //     },
+    //   },
       fpsLimit: 120,
       interactivity: {
         events: {
@@ -89,7 +89,7 @@ const ParticlesComponent = (props) => {
     []
   );
 
-  return <Particles id={props.id} init={particlesLoaded} options={options} />;
+  return <Particles  id={props.id} init={particlesLoaded} options={options} />;
 };
 
 export default ParticlesComponent;

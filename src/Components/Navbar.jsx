@@ -3,7 +3,7 @@ import { Link } from 'react-scroll'
 
 export const Navbar = () => {
   return (
-    <main className="bg-black  text-white">
+    <main className="text-white relative bg-black">
     <nav className="flex justify-between items-center p-6">
       <a href="/" className="text-2xl tracking-widest font-bold">
         Pristine Exim
