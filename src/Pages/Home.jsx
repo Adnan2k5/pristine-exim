@@ -20,50 +20,60 @@ export default function Home() {
 
   const services = [
     {
-      title: "Import & Export",
-      description: "We provide import services for all types of goods.",
-      img: imgoods,
-    },
-    {
-      title: "Forex Banking",
-      description: "We offer comprehensive Forex Banking services",
-      img: Fbank,
-    },
-    {
-      title: "Customs",
-      description:
-        "We provide customs clearance services for all types of goods.",
-      img: customs,
-    },
-    {
-      title: "GST",
-      description: "We provide GST services .",
-      img: gst,
-    },
-    {
-      title: "Sourcing",
-      description: "We provide sourcing services for all types of goods.",
-      img: sourcing,
-    },
-    {
-      title: "Banking Loan",
-      description: "We provide banking loan services.",
-      img: loan,
-    },
-    {
       title: "Project Related Guidance",
-      description: "We provide project related guidance services.",
+      description: "Strategic advice for trade-related projects",
       img: guide,
-    },
-    {
-      title: "Accounting",
-      description: "We provide accounting services.",
-      img: accounts,
+      url: "/",
     },
     {
       title: "Scrap Related",
-      description: "We provide scrap related services.",
+      description: "Industry-specific guidance for scrap-related businesses",
       img: scrap,
+      url: "https://www.lme.com/",
+    },
+    {
+      title: "Sourcing",
+      description: "Reliable global supplier connections",
+      img: sourcing,
+      url: "https://www.indiantradeportal.in/",
+    },
+    {
+      title: "Import & Export",
+      description: "Seamless global trade solutions",
+      img: imgoods,
+      url: "/",
+    },
+    {
+      title: "Customs",
+      description: "Simplified regulatory support",
+      img: customs,
+      url: " https://www.icegate.gov.in/",
+    },
+
+    {
+      title: "Forex Banking",
+      description: "Optimized currency exchange & banking guidance",
+      img: Fbank,
+      url: ": https://www.dgft.gov.in/",
+    },
+
+    {
+      title: "Banking Loan",
+      description: "Expert support for securing business loans",
+      img: loan,
+      url: "https://www.eximbankindia.in/",
+    },
+    {
+      title: "GST",
+      description: "Expert guidance on GST compliance",
+      img: gst,
+      url: "https://www.gst.gov.in/",
+    },
+    {
+      title: "Accounting",
+      description: "End-to-end financial consulting",
+      img: accounts,
+      url: "/",
     },
   ];
   const handleForm = async (data) => {
@@ -84,7 +94,7 @@ export default function Home() {
   };
   return (
     <div className="w-full h-full">
-      <Navbar/>
+      <Navbar />
       <a
         href="https://wa.me/919999999999"
         className="fixed right-0 bottom-3 -mt-10 z-[110] w-16 h-16 cursor-pointer"
@@ -126,62 +136,82 @@ export default function Home() {
           <div id="services" className="services mt-10">
             <div className="cards flex w-full flex-row flex-wrap gap-5 items-center justify-around">
               {services.map((service, index) => (
-                <div
-                  key={index}
-                  className="card w-full md:w-[40%] border hover:bg-gray-400 hover:text-white duration-300 hover:border-b hover:shadow-2xl hover:border-cyan-300 rounded-3xl px-2 py-3 flex items-center   gap-5"
+                <a
+                  href={service.url}
+                  className="card w-full md:w-[40%]  hover:bg-gray-400 hover:text-white duration-300 hover:border-b hover:shadow-2xl hover:border-cyan-300 rounded-3xl px-2 py-3 flex items-center   gap-5"
                 >
-                  <div className="logo rounded-2xl  w-24 h-24">
-                    <img
-                      src={service.img}
-                      alt={service.title}
-                      className="object-cover  w-full h-full rounded-2xl"
-                    />
+                  <div
+                    key={index}
+                    className="card w-full  border hover:bg-gray-400 hover:text-white duration-300 hover:border-b hover:shadow-2xl hover:border-cyan-300 rounded-3xl px-2 py-3 flex items-center   gap-5"
+                  >
+                    <div className="logo rounded-2xl  w-24 h-24">
+                      <img
+                        src={service.img}
+                        alt={service.title}
+                        className="object-cover  w-full h-full rounded-2xl"
+                      />
+                    </div>
+                    <div className="content flex flex-col items-start">
+                      <h1 className="text-2xl font-bold">{service.title}</h1>
+                      <p className="text-gray-500">{service.description}</p>
+                    </div>
                   </div>
-                  <div className="content flex flex-col items-start">
-                    <h1 className="text-2xl font-bold">{service.title}</h1>
-                    <p className="text-gray-500">{service.description}</p>
-                  </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>
         </div>
       </section>
-      <div id="contact" className="section bg-black relative p-10 text-white">
-        <div className="title w-fit">
-          <h1 className="text-3xl md:text-5xl text-center md:text-start font-bold tracking-wider">
-            Get in Touch
-          </h1>
-          <p className="text-gray-400 text-lg  text-center">
-            We are always ready to help you.
-          </p>
+      <div id="contact" className="section flex  bg-black relative p-10 text-white">
+        <div className="form w-1/2">
+          <div className="title w-fit">
+            <h1 className="text-3xl md:text-5xl text-center md:text-start font-bold tracking-wider">
+              Get in Touch Today!
+            </h1>
+            <p className="text-gray-400 text-lg  text-center">
+              Unlock Global Opportunities
+            </p>
+          </div>
+          <div className="form mt-4">
+            <form onSubmit={handleSubmit(handleForm)}>
+              <input
+                type="text"
+                {...register("name")}
+                placeholder="Name"
+                className="w-full  py-3 px-6 my-2 border border-gray-300 rounded-2xl"
+              />
+              <input
+                type="email"
+                {...register("email")}
+                placeholder="Email"
+                className="w-full px-6 py-3 my-2 border border-gray-300 rounded-2xl"
+              />
+              <textarea
+                name="query"
+                cols="10"
+                rows="5"
+                placeholder="Query"
+                {...register("query")}
+                className="w-full p-6 my-2 border border-gray-300 rounded-2xl"
+              ></textarea>
+              <button className="bg-white text-black px-4 py-3 rounded-2xl">
+                Submit
+              </button>
+            </form>
+          </div>
         </div>
-        <div className="form mt-4">
-          <form onSubmit={handleSubmit(handleForm)}>
-            <input
-              type="text"
-              {...register("name")}
-              placeholder="Name"
-              className="w-full  py-3 px-6 my-2 border border-gray-300 rounded-2xl"
-            />
-            <input
-              type="email"
-              {...register("email")}
-              placeholder="Email"
-              className="w-full px-6 py-3 my-2 border border-gray-300 rounded-2xl"
-            />
-            <textarea
-              name="query"
-              cols="10"
-              rows="5"
-              placeholder="Query"
-              {...register("query")}
-              className="w-full p-6 my-2 border border-gray-300 rounded-2xl"
-            ></textarea>
-            <button className="bg-white text-black px-4 py-3 rounded-2xl">
-              Submit
-            </button>
-          </form>
+        <div className="address w-1/2 px-5">
+          <div className="title text-3xl md:text-5xl text-center md:text-start font-bold tracking-wider">
+            <h1>Meet Us</h1>
+          </div>
+          <div className="address mt-4 p-10 space-y-2">
+            <h1 className="text-2xl font-bold">Mr. Rajesh Parmar</h1>
+            <p className="text-gray-400">Plot no. 543/4, Street no. 2B,</p>
+            <p className="text-gray-400">Opp- Nilkanth Park, Near Digjam mill Bedibandar road,</p>
+            <p className="text-gray-400">Post Office Khodiya colony, 361006  </p>
+            <p className="text-gray-400">Cell: +91 9879 27 2425 /9925 380 786</p>
+            <p className="text-gray-400">Email: rajesh@pristinexim.com</p> 
+          </div>
         </div>
       </div>
       <section className=" bg-black text-white">
